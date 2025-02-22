@@ -29,9 +29,20 @@ database.dbConnect();
 // for middleware
 app.use(express.json());
 app.use(cookieParser());
+const allowedOrigins = [
+    "http://localhost:3000", // Local frontend (for development)
+    "https://study-notion-866oskcr0-rohits-projects-6fe49551.vercel.app" // Deployed frontend
+];
+
 app.use(
     cors({
-        origin: "*",
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         credentials: true,
     })
 );
