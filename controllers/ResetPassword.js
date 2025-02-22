@@ -10,18 +10,18 @@ exports.resetPasswordToken = async (req, res) => {
     try {
 
         const email = req.body.email;
-
+        
         const user = await User.findOne({email: email});
-
+        
+        console.log("1",user);
         if(!user){
             return res.status(401).json({
                 success: false,
                 message: "Your Email is not registered with us"
             });
         }
-        // console.log("1");
         const token = crypto.randomUUID();
-// console.log(token);
+        console.log(token);
         const updatedDetails = await User.findOneAndUpdate(
             {email:email},
             {
@@ -32,10 +32,10 @@ exports.resetPasswordToken = async (req, res) => {
         )
         console.log("User: ",user);
         console.log("Details: " ,updatedDetails);
-        const url = `http://localhost:3000/update-password/${token}`;
+        const url = `https://study-notion-866oskcr0-rohits-projects-6fe49551.vercel.app/update-password/${token}`;
 
         await mailSender(email,
-            "Password Reset Lik",
+            "Password Reset Link",
             `Password Reset Link: ${url}`
         );
 

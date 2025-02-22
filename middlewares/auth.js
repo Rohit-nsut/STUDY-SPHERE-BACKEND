@@ -9,7 +9,8 @@ const cookieParser = require("cookie-parser");
 exports.auth = async (req, res, next) => {
 
     try {
-        console.log("cookie", req.cookies.token);
+        // console.log("cookie", req.cookies.token);
+        console.log("a");
         const token = req.cookies.token || req.body.token || req.header("Authorization").replace("Bearer ", "");
         console.log("token 1", token);
 
@@ -22,11 +23,11 @@ exports.auth = async (req, res, next) => {
 
 
         try {
-            // console.log(5);
+            console.log(5);
             const decode = jwt.verify(token, process.env.JWT_SECRET);
             // console.log(6);
             req.user = decode;
-            // console.log("decode: ",decode);
+            console.log("decode: ",decode);
             console.log("user: ",req.user);
 
         } 
