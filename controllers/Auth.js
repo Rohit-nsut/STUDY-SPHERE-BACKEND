@@ -86,7 +86,8 @@ exports.signup = async (req, res) => {
 
 
         // validate 
-        if(!firstName || !lastName || !email || !password || !confirmPassword || !otp){
+        if(!firstName || !lastName || !
+            || !password || !confirmPassword || !otp){
             return res.status(403).json({
                 success: false,
                 message: "Fill each entry"

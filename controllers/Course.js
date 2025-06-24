@@ -245,6 +245,7 @@ exports.editCourse = async (req, res) => {
       // console.log("up",updates);
   
       // If Thumbnail Image is found, update it
+      console.log("hello ",process.env.FOLDER_NAME);
       if (req.files) {
         console.log("thumbnail update")
         const thumbnail = req.files.thumbnailImage

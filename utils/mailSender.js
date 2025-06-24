@@ -1,16 +1,18 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const mailSender = async (email, title, body) => {
 
     try{
-        
+        console.log("envuser ", process.env.MAIL_USER);
+        console.log("envpass ", process.env.MAIL_PASS);
         let transporter = nodemailer.createTransport({
             host: process.env.MAIL_HOST,
             port: 587,
             secure: false,
             auth: {
                 user: process.env.MAIL_USER,
-                pass: process.env.Mail_PASS,
+                pass: process.env.MAIL_PASS,
             }
         });
 
@@ -26,7 +28,7 @@ const mailSender = async (email, title, body) => {
     }
 
     catch (err) {
-        console.log(err.message);
+        console.log("EMAIL ERROR ",err.message);
     }
 }
 

@@ -33,12 +33,12 @@ exports.resetPasswordToken = async (req, res) => {
         console.log("User: ",user);
         console.log("Details: " ,updatedDetails);
         const url = `https://study-notion-dir2uxg3y-rohits-projects-6fe49551.vercel.app/update-password/${token}`;
-
+        console.log("midlle");
         await mailSender(email,
             "Password Reset Link",
             `Password Reset Link: ${url}`
         );
-
+        console.log("midlle 2");
         return res.status(200).json({
             success: true,
             message: "Email sent successfully, Please check email and change pwd",
