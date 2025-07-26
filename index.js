@@ -25,13 +25,13 @@ const PORT = process.env.PORT || 5000;
 
 
 database.dbConnect();
-
+ 
 // for middleware
 app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
     // "http://localhost:3000",  // Local frontend (for development)
-    "https://study-sphere-rust.vercel.app/about/"  // Latest Vercel frontend link
+    "https://study-sphere-rust.vercel.app"  // Latest Vercel frontend link
 ];
 
 app.use(
