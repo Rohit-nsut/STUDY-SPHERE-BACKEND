@@ -30,8 +30,8 @@ database.dbConnect();
 app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
-    "http://localhost:3000",  // Local frontend (for development)
-    "https://study-sphere-pxsbm3rs0-rohits-projects-6fe49551.vercel.app/"  // Latest Vercel frontend link
+    // "http://localhost:3000",  // Local frontend (for development)
+    "https://study-sphere-rust.vercel.app/about/"  // Latest Vercel frontend link
 ];
 
 app.use(
