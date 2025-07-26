@@ -32,7 +32,7 @@ exports.resetPasswordToken = async (req, res) => {
         )
         console.log("User: ",user);
         console.log("Details: " ,updatedDetails);
-        const url = `https://study-notion-dir2uxg3y-rohits-projects-6fe49551.vercel.app/update-password/${token}`;
+        const url = `https://study-sphere-rust.vercel.app/update-password/${token}`;
         console.log("midlle");
         await mailSender(email,
             "Password Reset Link",
