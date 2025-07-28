@@ -1,1 +1,47 @@
+# Node modules
+node_modules/
+
+# Environment files
 .env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+
+# Dependency directories
+jspm_packages/
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Optional npm cache
+.npm/
+
+# Coverage reports
+coverage/
+
+# Next.js/.vercel
+.next/
+.vercel/
+
+# Ignore local database, if any
+*.sqlite
+*.sqlite3
+
+# PM2 logs or ecosystem files
+pids/
+*.pid
+*.seed
+*.pid.lock
